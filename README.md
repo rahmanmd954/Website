@@ -1,4 +1,4 @@
-Creators: Md Rahman and Ranya El-shinawy 
+Creators: Md Rahman and Ranya El-Shinawy 
 
  This program is currently a work in progress, which will eventually before a chrome extention. 
 
