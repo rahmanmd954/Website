@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    height: 100vh;
+    margin: 0;
+    background-color: #ffedda; /* Set your desired background color */
+}
+
+.header {
+    background-color: #bf5700;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+    padding: 25px;
+    color: #ffffff;
+    text-align: center; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center; /* Center content vertically within container */
+    flex-grow: 1; /* Allow the container to grow and take available space */
+} 
+
+input {
+    width: 200px;
+    padding: 10px;
+} 
+
+#submitButton1 {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 15px 30px; /* Padding around the text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */ 
+    text-align: center; 
+}  
+
+#submitButton2 {
+    background-color: red; /* Green background color */
+    color: white; /* White text color */
+    padding: 15px 15px; /* Padding around the text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */ 
+    text-align: center;
+}   
+
+#label.error {
+    color: red; /* Text color for error message */
+}
+
+#label.success {
+    color: green; /* Text color for success message */
+}
+
+.listPage {
+    /* Add your styling properties here */
+    margin: 10px;
+    padding: 5px;
+    background-color: #f0f0f0;
+}
+
+/* Style for the button with id "currentList" inside the div with class "listPage" */
+.listPage #currentList {
+    /* Add your styling properties here */
+    color: #ffffff;
+    background-color: #bf5700;
+    border: 1px solid #ffffff; 
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Styles for the question mark and tooltip */
+.question-mark-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.question-mark-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    right: -10px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    text-align: center;
+}
+
+.question-mark-container:hover .question-mark-tooltip {
+    display: block;
+}
+
+.question-mark {
+    font-size: 24px;
+}
