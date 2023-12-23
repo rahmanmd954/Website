@@ -34,7 +34,7 @@ input {
     padding: 10px;
 } 
 
-#submitButton1 {
+#addButton {
     background-color: #4CAF50; /* Green background color */
     color: white; /* White text color */
     padding: 15px 30px; /* Padding around the text */
@@ -44,8 +44,8 @@ input {
     text-align: center; 
 }  
 
-#submitButton2 {
-    background-color: red; /* Green background color */
+#removeButton {
+    background-color: red; /* Red background color */
     color: white; /* White text color */
     padding: 15px 15px; /* Padding around the text */
     border: none; /* No border */
@@ -55,11 +55,11 @@ input {
 }   
 
 #label.error {
-    color: red; /* Text color for error message */
+    color: rgb(255, 0, 0); /* Text color for error message */
 }
 
 #label.success {
-    color: green; /* Text color for success message */
+    color: rgb(12, 141, 12); /* Text color for success message */
 }
 
 .listPage {
