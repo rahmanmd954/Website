@@ -22,7 +22,6 @@ document.getElementById("addButton").onclick = function () {
         document.getElementById("label").classList.remove("success");
         document.getElementById("label").classList.add("error");
     } else {
-        
         console.log("Unique Id was found");
         document.getElementById("label").innerHTML = "Success!";
         document.getElementById("label").classList.remove("error");
