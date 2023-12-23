@@ -1,9 +1,14 @@
+//Authors Md Rahman & El-Shinawy 
+//current changes needed:   
+/* 
+
+*/
 let uniqueId;
 let currentStatus = "Unknown";
 const ids = new Map();
 //number of notifications the user can have active at once
 const limit = 20;
-//function upon user click of submit button
+//function upon user click of add button
 document.getElementById("submitButton1").onclick = function () {
     uniqueId = document.getElementById("input").value;
     if (uniqueId.length != 6) {
@@ -25,7 +30,8 @@ document.getElementById("submitButton1").onclick = function () {
         ids.set(uniqueId, currentStatus);
     }
 }
-
+ 
+//function upon user click of remove button
 document.getElementById("submitButton2").onclick = function () {
     uniqueId = document.getElementById("input").value;
     if (uniqueId.length != 6 || !ids.has(uniqueId)) {
