@@ -5,7 +5,7 @@ body {
     justify-content: flex-start; /* Align content to the top */
     height: 100vh;
     margin: 0;
-    background-color: #ffedda; /* Set your desired background color */
+    background-color: #ffedda; 
 }
 
 .header {
@@ -35,8 +35,8 @@ input {
 } 
 
 #addButton {
-    background-color: #4CAF50; /* Green background color */
-    color: white; /* White text color */
+    background-color: #4CAF50; 
+    color: white; 
     padding: 15px 30px; /* Padding around the text */
     border: none; /* No border */
     border-radius: 5px; /* Rounded corners */
@@ -45,8 +45,8 @@ input {
 }  
 
 #removeButton {
-    background-color: red; /* Red background color */
-    color: white; /* White text color */
+    background-color: red; 
+    color: white; 
     padding: 15px 15px; /* Padding around the text */
     border: none; /* No border */
     border-radius: 5px; /* Rounded corners */
@@ -63,15 +63,12 @@ input {
 }
 
 .listPage {
-    /* Add your styling properties here */
     margin: 10px;
     padding: 5px;
     background-color: #f0f0f0;
 }
 
-/* Style for the button with id "currentList" inside the div with class "listPage" */
 .listPage #currentList {
-    /* Add your styling properties here */
     color: #ffffff;
     background-color: #bf5700;
     border: 1px solid #ffffff; 
