@@ -6,6 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UT Class Status List</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            background-color: #bf5700;
+            padding: 15px;
+        }
+
+        .list-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #classList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            border: 1px solid #ddd;
+            padding: 10px;
+            flex-basis: calc(33.33% - 20px); /* Adjust the percentage based on your preference */
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,9 +54,11 @@
 
     <div class="list-container">
         <ul id="classList"></ul>
+        <label id="listOut"></label>
     </div>
 
     <script src="list.js"></script>
 </body>
 
 </html>
+

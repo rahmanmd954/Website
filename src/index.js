@@ -53,15 +53,13 @@ document.getElementById("removeButton").onclick = function () {
 } 
 
 document.getElementById("currentList").onclick = function () {
+    // Store the ids Map in localStorage
+    localStorage.setItem('idsList', JSON.stringify(Array.from(ids)));
+
     // Open a new tab with the list.html file
     const listPage = window.open("list.html", "_blank", "width=600,height=400");
-
-    // Wait for the new tab to fully load before passing the ids Map
-    listPage.onload = function () {
-        // Convert the ids Map to an array and pass it to the new tab
-        listPage.idsList = Array.from(ids);
-    };
 }
+
 
 
 
