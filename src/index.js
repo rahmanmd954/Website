@@ -33,7 +33,7 @@ document.getElementById("addButton").onclick = function () {
         ids.set(uniqueId, currentStatus);
     }
 }
- 
+
 //function upon user click of remove button
 document.getElementById("removeButton").onclick = function () {
     uniqueId = document.getElementById("input").value;
@@ -50,7 +50,7 @@ document.getElementById("removeButton").onclick = function () {
         document.getElementById("label").classList.add("success");
         ids.delete(uniqueId);
     }
-} 
+}
 
 document.getElementById("currentList").onclick = function () {
     // Store the ids Map in localStorage
