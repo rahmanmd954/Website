@@ -61,7 +61,7 @@ document.getElementById("currentList").onclick = function () {
     const listPage = window.open("list.html", "_blank", "width=600,height=400");
 }
 
-async function scrape(url){
+async function scrape(url) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
@@ -73,3 +73,4 @@ async function scrape(url){
 
 //link to ut registration page
 scrape('https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/');
+
