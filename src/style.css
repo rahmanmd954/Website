@@ -70,7 +70,7 @@ input {
 
 .listPage #currentList {
     color: #ffffff;
-    background-color: #bf5700;
+    background-color: #bf5700; /* UT BURNT ORANGE */
     border: 1px solid #bf5700; 
     border-radius: 5px;
     padding: 10px 20px;
