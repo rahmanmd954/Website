@@ -1,11 +1,7 @@
 //Authors Md Rahman & El-Shinawy 
 //current changes needed:   
 /* 
-  have to find a way to scrape UT registration to get the status of the class 
-
-  Mailto function in order to send notifications if user turns notification on 
-
-  create second page where all the classes being tracked are displayed
+  Redirect the user to the UT log On page, and use that logon to scrape the website and get the info of the classes
 */
 let uniqueId;
 let currentStatus = "Unknown";
