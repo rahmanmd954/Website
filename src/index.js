@@ -56,19 +56,5 @@ document.getElementById("currentList").onclick = function () {
     // Open a new tab with the list.html file
     const listPage = window.open("list.html", "_blank", "width=600,height=400");
 }
- 
-const puppeteer = require('puppeteer');
-async function scrape(url) { 
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.goto(url);
-    // change what is in parentheses to Xpath we are scraping
-    const [el] = await page.$x('//*[@id="search_area"]/div[2]/div[2]/form/div[2]/label')
-    const txt = await el.getProperty('textContent');
-    const rawTxt = await txt.jsonValue();
-}
- 
 
-//link to ut registration page
-scrape('https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/');
 
