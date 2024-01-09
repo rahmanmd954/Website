@@ -2,11 +2,12 @@
 //current changes needed:   
 /* 
   Redirect the user to the UT log On page, and use that logon to scrape the website and get the info of the classes
+  UT log On page: https://enterprise.login.utexas.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2
 */
 let uniqueId;
 let currentStatus = "Unknown";
 const ids = new Map();
-
+const puppeteer = require('puppeteer');
 //number of notifications the user can have active at once
 const limit = 20;
 //function upon user click of add button
@@ -56,5 +57,3 @@ document.getElementById("currentList").onclick = function () {
     // Open a new tab with the list.html file
     const listPage = window.open("list.html", "_blank", "width=600,height=400");
 }
-
-
