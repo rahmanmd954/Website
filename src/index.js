@@ -7,6 +7,7 @@
 let uniqueId;
 let currentStatus = "Unknown";
 const ids = new Map();
+const puppeteer = require('puppeteer');
 //number of notifications the user can have active at once
 const limit = 20;
 //function upon user click of add button
