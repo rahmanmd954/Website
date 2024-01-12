@@ -1,39 +1,33 @@
-// Retrieve the list of unique IDs and their current status from localStorage
-const storedIdsList = JSON.parse(localStorage.getItem('idsList'));
+// Redirect the user to the UTexas link
+window.location.href = 'https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/';
 
-// Convert the stored array back to a Map
-const idsList = new Map(storedIdsList);
-
-// Display the list in the new tab
-const classListContainer = document.getElementById('classList');
-
-idsList.forEach(([uniqueId, status]) => {
-    const listItem = document.createElement('li');
-    listItem.textContent = `ID: ${uniqueId}, Status: ${status}`;
-    classListContainer.appendChild(listItem);
-   // window.location.href = 'https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/';
-});
-
-// necessary libraries
-const { Builder, By, Key, until} = require("selenium-webdriver");
-require("chromedriver");
-
-async function test_case() {
-    let driver = await new Builder().forBrowser("chrome").build();
-
-    try {
-        await driver.get("https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/");
-
-        // Wait for the "unique_number" element to be present for a maximum of 40 seconds
-        await driver.wait(until.elementLocated(By.name("unique_number")), 40000);
-
+// Wait for the "unique_number" element to be present for a maximum of 60 seconds
+const waitForElement = async () => {
+    const uniqueNumberElement = document.getElementsByName('unique_number')[0];
+    if (uniqueNumberElement) {
         // Once the element is present, send keys
-        await driver.findElement(By.name("unique_number")).sendKeys("12345", Key.RETURN);
-    } finally {
-        // Close the browser
-        await driver.quit();
+        uniqueNumberElement.value = '12345';
+        uniqueNumberElement.form.submit();
+    } else {
+        // Retry after a short delay
+        setTimeout(waitForElement, 1000);
     }
-}
+};
 
-// Run the Selenium WebDriver code
-test_case();
+// Call the function to wait for the element
+waitForElement();
+
+// Function to wait for a specific element on the target website
+const waitForLoggedIn = async () => {
+    const loggedInElement = document.getElementById('unique_nuqmber_header'); // Replace with the actual ID or selector
+    if (loggedInElement) {
+        // Continue with the scraping or any other actions
+        console.log('User is logged in!');
+    } else {
+        // Retry after a short delay
+        setTimeout(waitForLoggedIn, 1000);
+    }
+};
+
+// Call the function to wait for the user to log in
+waitForLoggedIn();
