@@ -27,7 +27,7 @@ document.getElementById("addButton").onclick = function () {
         document.getElementById("label").innerHTML = "Success!";
         document.getElementById("label").classList.remove("error");
         document.getElementById("label").classList.add("success");
-        ids.set(uniqueId, currentStatus);
+        ids.set(uniqueId, currentStatus); 
     }
 }
 
