@@ -1,31 +1,37 @@
-// Redirect the user to the UTexas link
-window.location.href = 'https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/';
+// Retrieve the list of unique IDs and their current status from localStorage
+const storedIdsList = JSON.parse(localStorage.getItem('idsList'));
 
-// Wait for the "unique_number" element to be present for a maximum of 60 seconds
-const waitForElement = async () => {
-    const uniqueNumberElement = document.getElementsByName('unique_number')[0];
-    if (uniqueNumberElement) {
+// Convert the stored array back to a Map
+const idsList = new Map(storedIdsList);
+
+// Display the list in the new tab
+const classListContainer = document.getElementById('classList');
+
+idsList.forEach(([uniqueId, status]) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `ID: ${uniqueId}, Status: ${status}`;
+    classListContainer.appendChild(listItem);
+   // window.location.href = 'https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/';
+});
+
+// Browser-side Selenium WebDriver code
+// Add the following script tag in your HTML file to load the Selenium WebDriver library
+// <script src="https://unpkg.com/selenium-webdriver@4.0.0-alpha.7/dist/selenium-webdriver.js"></script>
+
+async function test_case() {
+    let driver = await new webdriver.Builder().forBrowser("chrome").build();
+
+    try {
+        await driver.get("https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/");
+
+        // Wait for the "unique_number" element to be present for a maximum of 40 seconds
+        await driver.wait(until.elementLocated(webdriver.By.name("unique_number")), 40000);
+
         // Once the element is present, send keys
-        uniqueNumberElement.value = '12345';
-        uniqueNumberElement.form.submit();
-    } else {
-        // Retry after a short delay
-        setTimeout(waitForElement, 1000);
-    }
-};
-
-// Call the function to wait for the element
-waitForElement();
-
-// Function to wait for a specific element on the target website
-const waitForLoggedIn = async () => {
-    const loggedInElement = document.getElementById('unique_nuqmber_header'); // Replace with the actual ID or selector
-    if (loggedInElement) {
-        // Continue with the scraping or any other actions
-        console.log('User is logged in!');
-    } else {
-        // Retry after a short delay
-        setTimeout(waitForLoggedIn, 1000);
+        await driver.findElement(webdriver.By.name("unique_number")).sendKeys("12345", Key.RETURN);
+    } finally {
+        // Close the browser
+        await driver.quit();
     }
 };
 
