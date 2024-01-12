@@ -12,7 +12,7 @@ const limit = 20;
 //function upon user click of add button
 document.getElementById("addButton").onclick = function () {
     uniqueId = document.getElementById("input").value;
-    if (uniqueId.length != 6) {
+    if (uniqueId.length != 5) {
         uniqueId = "";
         console.log("Error: Unique is was not entered correctly, or does not exist");
         document.getElementById("label").innerHTML = "Error Id not found";
