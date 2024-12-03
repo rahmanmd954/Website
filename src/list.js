@@ -1,33 +1,42 @@
-// Redirect the user to the UTexas link
-window.location.href = 'https://utdirect.utexas.edu/apps/registrar/course_schedule/20242/';
 
-// Wait for the "unique_number" element to be present for a maximum of 60 seconds
-const waitForElement = async () => {
-    const uniqueNumberElement = document.getElementsByName('unique_number')[0];
-    if (uniqueNumberElement) {
-        // Once the element is present, send keys
-        uniqueNumberElement.value = '12345';
-        uniqueNumberElement.form.submit();
+//ensure proper loading
+document.addEventListener("DOMContentLoaded", () => {
+    displayTrackedClasses();
+});
+
+/**
+ * Displays the classes that are currently being tracked by retrieving data from localStorage.
+ */
+function displayTrackedClasses() {
+    const classesList = JSON.parse(localStorage.getItem('classesList'));
+    const classListTableBody = document.querySelector("#classList tbody");
+    const noClassesDiv = document.getElementById("noClasses");
+
+    // Clear any existing rows
+    classListTableBody.innerHTML = "";
+
+    if (!classesList || classesList.length === 0) {
+        noClassesDiv.style.display = "block";
+        return;
     } else {
-        // Retry after a short delay
-        setTimeout(waitForElement, 1000);
+        noClassesDiv.style.display = "none";
     }
-};
 
-// Call the function to wait for the element
-waitForElement();
+    classesList.forEach(classInfo => {
+        const row = document.createElement("tr");
 
-// Function to wait for a specific element on the target website
-const waitForLoggedIn = async () => {
-    const loggedInElement = document.getElementById('unique_nuqmber_header'); // Replace with the actual ID or selector
-    if (loggedInElement) {
-        // Continue with the scraping or any other actions
-        console.log('User is logged in!');
-    } else {
-        // Retry after a short delay
-        setTimeout(waitForLoggedIn, 1000);
-    }
-};
+        const uniqueIdCell = document.createElement("td");
+        uniqueIdCell.textContent = classInfo.uniqueId;
+        row.appendChild(uniqueIdCell);
 
-// Call the function to wait for the user to log in
-waitForLoggedIn();
+        const classNameCell = document.createElement("td");
+        classNameCell.textContent = classInfo.className;
+        row.appendChild(classNameCell);
+
+        const statusCell = document.createElement("td");
+        statusCell.textContent = classInfo.status;
+        row.appendChild(statusCell);
+
+        classListTableBody.appendChild(row);
+    });
+}
