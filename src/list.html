@@ -1,92 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UT Class Status List</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .header {
-            width: 100%;
-            text-align: center;
-            background-color: #bf5700;
-            padding: 15px;
-            color: white;
-        }
-
-        .list-container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px 0;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #classList {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2a154;
-            color: white;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        .no-classes {
-            text-align: center;
-            color: #777;
-            font-size: 1.2em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>UT Class Status List</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <div class="header">
-        <h1>Classes You Are Tracking</h1>
+  <div class="header">
+    <h1>Classes You Are Tracking</h1>
+  </div>
+  <div class="list-container">
+    <table id="classList">
+      <thead>
+        <tr>
+          <th>Unique ID</th>
+          <th>Class Name</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div id="noClasses" class="no-classes" style="display: none;">
+      No classes are being tracked.
     </div>
-
-    <div class="list-container">
-        <table id="classList">
-            <thead>
-                <tr>
-                    <th>Unique ID</th>
-                    <th>Class Name</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Classes will be dynamically inserted here -->
-            </tbody>
-        </table>
-        <div id="noClasses" class="no-classes" style="display: none;">
-            No classes are being tracked.
-        </div>
-    </div>
-
-    <script type="module" src="list.js" defer></script>
+  </div>
+  <script src="list.js" defer></script>
 </body>
-
 </html>

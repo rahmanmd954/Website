@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UT-tracker</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UT Class Tracker</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <div class="header">
-        <h1>Welcome to UT Class Status Tracker</h1>
-    </div>
+  <div class="header">
+    <h1>Welcome to UT Class Status Tracker</h1>
+  </div>
 
-    <div class="container">
-        <input type="text" id="input" placeholder="Enter 5-digit Unique ID" title="Enter 5 digit uniue ID here">
-        <br>
-        <div class="button" id="submitButton">
-            <button id="addButton" title="Add class to list">Add</button>
-            <button id="removeButton" title="Remove class from list">Remove</button>
-
-        </div>
-        <br>
-        <br>
-        <div class="labelBox" id="label">
-            <label for="inputBox"></label>
-        </div>
+  <div class="container">
+    <input
+      type="text"
+      id="input"
+      placeholder="Enter 5-digit Unique ID"
+      title="Enter 5 digit unique ID here" />
+    <br />
+    <div class="button" id="submitButton">
+      <button id="addButton" title="Add class to list">Add</button>
+      <button id="removeButton" title="Remove class from list">Remove</button>
     </div>
-    <div class="listPage">
-        <button id="currentList" title="Shows the classes you are currently tracking">Classes you are tracking</button>
+    <br /><br />
+    
+    <!-- This is where our success/error message will appear -->
+    <div class="labelBox" id="label">
+      <label for="inputBox"></label>
     </div>
+  </div>
 
-    <div class="question-mark-container">
-        <span class="question-mark">&#63;</span>
-        <div class="question-mark-tooltip">Enter the unique id and press add to track the status of a class. Enter a
-            unique id and click the
-            Remove button to remove the Id from the list. There is a 20 class Limit.</div>
+  <div class="listPage">
+    <button id="currentList" title="Shows the classes you are currently tracking">
+      Classes you are tracking
+    </button>
+  </div>
+
+  <div class="question-mark-container">
+    <span class="question-mark">&#63;</span>
+    <div class="question-mark-tooltip">
+      Enter the unique id and press Add to track the status of a class. 
+      Enter a unique id and click Remove to remove the ID from the list.
+      There is a 20-class limit.
     </div>
+  </div>
 
-    <script src="index.js"></script>
+  <button id="updateStatusButton" title="Update the statuses of all classes">
+    Update All Classes
+  </button>
+
+  <script src="popup.js"></script>
 </body>
-
 </html>
