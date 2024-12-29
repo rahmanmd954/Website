@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UT Class Tracker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="header">
     <h1>Welcome to UT Class Status Tracker</h1>
   </div>
 
   <div class="container">
-    <input
-      type="text"
-      id="input"
-      placeholder="Enter 5-digit Unique ID"
-      title="Enter 5 digit unique ID here" />
+    <input type="text" id="input" placeholder="Enter 5-digit Unique ID" title="Enter 5 digit unique ID here" />
     <br />
     <div class="button" id="submitButton">
       <button id="addButton" title="Add class to list">Add</button>
       <button id="removeButton" title="Remove class from list">Remove</button>
     </div>
     <br /><br />
-    
+
     <!-- This is where our success/error message will appear -->
     <div class="labelBox" id="label">
       <label for="inputBox"></label>
@@ -39,7 +37,7 @@
   <div class="question-mark-container">
     <span class="question-mark">&#63;</span>
     <div class="question-mark-tooltip">
-      Enter the unique id and press Add to track the status of a class. 
+      Enter the unique id and press Add to track the status of a class.
       Enter a unique id and click Remove to remove the ID from the list.
       There is a 20-class limit.
     </div>
@@ -51,4 +49,5 @@
 
   <script src="popup.js"></script>
 </body>
+
 </html>
