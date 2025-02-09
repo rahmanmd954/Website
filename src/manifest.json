@@ -1,6 +1,6 @@
 {
     "name": "UT Class Tracker",
-    "Author": "Md Rahman, Ranya El-Shinawy, Damian Padayachee",
+    "Author": "Md Rahman, Ranya El-Shinawy,
     "version": "1.0",
     "manifest_version": 3,
     "description": "Track UT classes by unique IDs, then scrape data from UT Registrar once user logs in.",
